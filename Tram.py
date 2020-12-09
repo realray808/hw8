@@ -2,6 +2,7 @@ class Tram:
     def __init__(self, max_stations):
         self.max_station = max_stations
         self.cur_station = 1
+        self.customer = 0
 
     def move(self):
         self.cur_station += 1

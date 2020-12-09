@@ -3,6 +3,8 @@ class Customer:
         self.start_station = start_station
         self.fin_station = final_station
         self.id = identifier
+        self.cur_station = start_station
+        self.on_tram = False
 
     def __str__(self):
         status = "Customer %d is at station %d and has destination %d" % \
