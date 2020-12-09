@@ -1,8 +1,6 @@
 import json
 
-import Customer
-import Tram
-# import Park
+import Park
 
 
 f = open("file1.json")
@@ -10,11 +8,15 @@ data = json.loads(f.read())
 customer = data["Customer"]
 station = data["Station"]
 
-customer_init = []
-customer_in_tram = []
-for k, C in enumerate(customer):
-    customer_init.append(Customer.Customer(C[0], C[1], k))
-print(customer_init)
 
-def simulate(customer, station):
+def simulate(customers, max_station):
+    iteration = 1
+    park = Park.Park(max_station, customers)
+    print(park)
+    print("End of Iteration %d" % iteration)
+    park.tram.move()
+    iteration += 1
 
+
+if __name__ == '__main__':
+    simulate(customer, station)
